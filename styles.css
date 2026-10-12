@@ -1,0 +1,241 @@
+:root {
+  --negro-profundo: #080d18;
+  --azul-oscuro: #111c2e;
+  --azul-electrico: #2563eb;
+  --azul-celeste: #38bdf8;
+  --gris-claro: #e2e8f0;
+  --gris-azulado: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background:
+    radial-gradient(circle at 85% 0%, rgba(37, 99, 235, 0.16), transparent 28rem),
+    var(--negro-profundo);
+  color: var(--gris-claro);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--azul-celeste);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--gris-claro);
+}
+
+.site-header,
+main {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  padding: 4rem 2rem 3rem;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.site-header h1 {
+  margin: 0;
+  color: var(--gris-claro);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.site-header > div > p {
+  margin: 0.75rem 0 0;
+  color: var(--azul-celeste);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+address {
+  padding-right: 7rem;
+  color: var(--gris-azulado);
+  font-style: normal;
+  text-align: right;
+}
+
+address p {
+  margin: 0.2rem 0;
+}
+
+main {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem 0 4rem;
+}
+
+section {
+  padding: 1.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 1rem;
+  background: var(--azul-oscuro);
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  margin: 0 0 1.25rem;
+  color: var(--azul-celeste);
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0 0 0.4rem;
+  color: var(--gris-claro);
+}
+
+p {
+  color: var(--gris-azulado);
+}
+
+.texto-izquierda {
+  text-align: left;
+}
+
+.perfil-contenido {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 24rem);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+#experiencia,
+#proyectos-personales {
+  margin-top: 2rem;
+  padding: 1.25rem 0 0;
+  border: 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+article {
+  margin-top: 1rem;
+  padding: 1.25rem;
+  border-left: 3px solid var(--azul-electrico);
+  border-radius: 0 0.75rem 0.75rem 0;
+  background: rgba(8, 13, 24, 0.55);
+}
+
+article p,
+article li,
+section > ul {
+  color: var(--gris-azulado);
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li::marker {
+  color: var(--azul-celeste);
+}
+
+.conocimientos {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 24rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.conocimientos li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  border-radius: 0.6rem;
+  background: rgba(8, 13, 24, 0.45);
+  color: var(--gris-claro);
+}
+
+.conocimientos i {
+  min-width: 1.5rem;
+  color: var(--azul-celeste);
+  font-size: 1.35rem;
+  text-align: center;
+}
+
+.boton-github {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.5rem;
+  background-color: var(--azul-electrico);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0.4rem 1rem rgba(37, 99, 235, 0.25);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.boton-github:hover,
+.boton-github:focus-visible {
+  background-color: var(--azul-celeste);
+  color: var(--negro-profundo);
+  transform: translateY(-2px);
+}
+
+.boton-github:focus-visible {
+  outline: 3px solid var(--gris-claro);
+  outline-offset: 2px;
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    display: block;
+    padding: 5rem 1rem 2rem;
+  }
+
+  .site-header > div {
+    text-align: center;
+  }
+
+  address {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .boton-github {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  main {
+    width: min(100% - 1rem, 1120px);
+    padding-top: 1rem;
+  }
+
+  section {
+    padding: 1.25rem;
+  }
+
+  .perfil-contenido {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
